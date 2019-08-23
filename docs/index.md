@@ -12,4 +12,4 @@ Currently the workflow includes the following steps:
 * Contamination Detection
 * Graphical Report Creation
 
-Haplocheck is already available in mitoverse. Please click [here](https://mitoverse.i-med.ac.at/index.html#!run/haplocheck) to run your first contamination check.
+Haplocheck is already available in mitoverse. Please click [here](https://mitoverse.i-med.ac.at/index.html#!run/haplocheck%401.0.5) to run your first contamination check.
