@@ -1,7 +1,7 @@
 
 ## Contamination Detection
 
-Haplocheck works by detecting two different components (or mitochondrial haplotypes) within one sample. Each heteroplasmic position is split into two components and added two a major and minor profile. Additionally, homoplasmic positions are added two both profiles. Each profile is then classified into a haplogroup. 
+Haplocheck works by detecting two different components (or mitochondrial haplotypes) within one sample. Each heteroplasmic position is split into two components and added to a major and minor profile. Additionally, homoplasmic positions are added to both profiles. Each profile is then classified into a haplogroup. 
 
 When analysing the output, three different scenarios are possible (see Figure): 
 
