@@ -4,8 +4,9 @@ theme: readthedocs
 pages:
 - Home: index.md
 - Installation: installation.md
-- Contamination Detection: method.md
-- Analyse Results: analyse.md
+- Calculate Contamination: method.md
+- Interpret Results: analyse.md
+- FAQ: faq.md
 - Contact: contact.md
 
 
