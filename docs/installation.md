@@ -1,7 +1,7 @@
 
 ## Installation
 
-The complete pipeline has been integrated into (Cloudgene)[https://www.cloudgene.io] for local usage and to provide it as a cloud web service. 
+The complete pipeline has been integrated into [Cloudgene](https://www.cloudgene.io) for local usage and to provide it as a cloud web service. 
 ### Local Usage
 
 For local usage on the command line, only Java 8 or higher is required. 
@@ -12,4 +12,4 @@ For local usage on the command line, only Java 8 or higher is required.
         
 ### Cloud Web Service
         
-To use our cloud web service, please click (here)[https://mitoverse.i-med.ac.at/].
+To use our cloud web service, please click [here](https://mitoverse.i-med.ac.at/).
