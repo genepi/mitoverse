@@ -7,11 +7,11 @@ Please contact [Sebastian Schönherr](mailto:sebastian.schoenherr@i-med.ac.at) i
 
 ### Haplocheck Team
 
-* [Hansi Weissensteiner] (mailto:hansi.weissensteiner@i-med.ac.at)
+* [Hansi Weissensteiner](mailto:hansi.weissensteiner@i-med.ac.at)
 * [Lukas Forer](mailto:lukas.forer@i-med.ac.at)
-* [Liane Fendt] (mailto:liane.fendt@i-med.ac.at)
-* [Florian Kronenberg] (mailto:florian.kronenberg@i-med.ac.at)
-* [Antonio Salas] (mailto:antonio.salas@usc.es)
+* [Liane Fendt](mailto:liane.fendt@i-med.ac.at)
+* [Florian Kronenberg](mailto:florian.kronenberg@i-med.ac.at)
+* [Antonio Salas](mailto:antonio.salas@usc.es)
 * [Sebastian Schönherr](mailto:sebastian.schoenherr@i-med.ac.at)
 
 ## Cloud framework: [Cloudgene](http://www.cloudgene.io)
