@@ -21,7 +21,5 @@ extra:
     - type: github-alt
 
 markdown_extensions:
-    - toc:
-        permalink:
-    - admonition:
+  - admonition
 
