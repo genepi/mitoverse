@@ -4,6 +4,7 @@ theme: mkdocs
 pages:
 - Home: index.md
 - User Guide:
+    - Quick Start: quick-start.md
     - Installation: installation.md
     - Contamination Detection: method.md 
     - Interpret Results: analyse.md
