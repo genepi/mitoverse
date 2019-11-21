@@ -3,7 +3,7 @@ theme: readthedocs
 
 pages:
 - Home: index.md
-- Getting Started: quick-start.md
+- Getting Started: getting-started.md
 - User Guide:
     - Installation: installation.md
     - Contamination Method: method.md 

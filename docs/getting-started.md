@@ -1,5 +1,5 @@
 
-## Quick Start
+## Getting Started
 
 To calculate the contamination levels for each sample, two options are available. In both cases the 1000G Phase 3 file (n=2504) is analyzed. 
 
