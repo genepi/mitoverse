@@ -1,14 +1,16 @@
 
-## Analyse Result Files 
+## Interpret Results 
+
+Haplocheck reports the contamination status for each mitochondrial input sample and creates (a) a graphical report and (b) a textual description is created.
 
 ### Graphical Report
 
-Haplocheck reports the contamination status for each input sample and a graphical report is created.
-
+The graphical report includes an html table including the most important information from the textual result file. The table can be filtered, sorted and specific samples can be searched. Addtionally, for each sample a phylogenetic tree is generated using graph information from Phylotree 17.
+ 
 ![Result Report](img/report1.png)
 
-#### Graphical Presentation
-To check for contamination in detail, we provide for each mixture a graphical representation of the phylogenetic tree. The tree starts at the root node (rCRS) and shows homoplasmic (blue) / heteroplasmic (green) positions for each transition.
+#### Phylogenetic Tree
+The tree starts at the root node (rCRS) and shows homoplasmic (blue) / heteroplasmic (green) positions for each transition until the final haplogroup (as assigned by Haplogrep) has been reached.
 
 ![Phylogenetic Tree](img/report_tree.png)
 

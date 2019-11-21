@@ -6,8 +6,8 @@ pages:
 - Getting Started: quick-start.md
 - User Guide:
     - Installation: installation.md
-    - Contamination Detection: method.md 
-    - Interpret Results: analyse.md
+    - Contamination Method: method.md 
+    - Interpret Results: interpret.md
 - FAQ: faq.md
 - About: contact.md
 
