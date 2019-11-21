@@ -71,7 +71,7 @@ Amount of heteroplasmies used for the **minor** haplgroup.
 
 #### Major Heteroplasmy Level
 
-The major heteroplasmy level is calculated by averaging the level of each heteroplasmy (major component only). For this level, only heteroplasmies from the common ancestor of the major profile are used. Figure below shows the phylogenetic graph of sample HG00245. H is the common ancestor for both components, therefore only heteroplasmies `6776C (0.985)`, `10754C (0.981), `3992T (0.985)`, `4418C (0.98)` and `8950A (0.989)` are used for the level calculation. By averaging all levels, a final major level of `0.984` is calculated. 
+The major heteroplasmy level is calculated by averaging the level of each heteroplasmy (major component only). Only heteroplasmies from the common ancestor are added to the level. Figure below shows the phylogenetic graph of sample HG00245. **H** is the common ancestor for both profiles, therefore only the heteroplasmies `6776C (0.985)`, `10754C (0.981)`, `3992T (0.985)`, `4418C (0.98)` and `8950A (0.989)` are used for the level calculation. By averaging all levels, a final major level of `0.984` is assigned. 
 
 ![Figure1](img/heteroplasmy_major.jpg)
 
@@ -85,5 +85,5 @@ This column defines the distance between the haplogroups of the major and minor 
 
 #### Clusters 
 
-All heteroplasmies are clustered using the Jenks natural breaks classification method. This information is provided to the user, to see if different clusters can be identified by haplocheck. 
+All heteroplasmies are clustered using the Jenks natural breaks classification method. This information is provided to the user to see if different clusters can be identified by haplocheck. 
 
