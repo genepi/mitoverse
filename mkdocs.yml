@@ -1,5 +1,4 @@
 site_name: Mitoverse
-theme: mkdocs
 
 pages:
 - Home: index.md
