@@ -1,10 +1,10 @@
 
 ## Quick Start
 
-To check the 1000 Genomes Phase 3 VCF file for contamination, two options are available:
+To calculate the contamination levels for each sample, two options are available. In both cases the 1000G Phase 3 file (n=2504) is analyzed. 
 
 
-### Run 1000G VCF locally 
+#### Run haplocheck locally 
 
         mkdir haplocheck 
         cd haplocheck
@@ -14,10 +14,9 @@ To check the 1000 Genomes Phase 3 VCF file for contamination, two options are av
         ./cloudgene run haplocheck@1.0.6 --files 1000g-nobaq.vcf.gz --output results
         firefox results/report/report.html
         
-### Run 1000G on the mitoverse cloud platform 
+#### Run haplocheck using the mitoverse cloud platform 
 
-
-- The pre-computed VCF file can be downloaded from [here](https://github.com/genepi/haplocheck/raw/master/test-data/contamination/1000G/all/1000g-nobaq.vcf.gz)
+- [Download](https://github.com/genepi/haplocheck/raw/master/test-data/contamination/1000G/all/1000g-nobaq.vcf.gz) the pre-computed VCF file  
 - Go to [mitoverse](https://mitoverse.i-med.ac.at) and login or sign-up for a new account
-- Select the haplocheck workflow and upload the 1000g-nobaq.vcf.gz
-- After around 2 minutes the final report (report.html) is ready and all results are available for download
+- Select the haplocheck workflow and upload the variant file
+- After around 2 minutes the final report (report.html) is ready and all results are available for download. 

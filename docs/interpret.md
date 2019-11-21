@@ -1,83 +1,83 @@
 
 ## Interpret Results 
 
-Haplocheck reports the contamination status for each mitochondrial input sample and creates (a) a graphical report and (b) a textual description is created.
+Haplocheck reports the contamination status for each mitochondrial input sample and creates (a) a graphical report and (b) a textual description.
 
 ### Graphical Report
 
-The graphical report includes an html table including the most important information from the textual result file. The table can be filtered, sorted and specific samples can be searched. Addtionally, for each sample a phylogenetic tree is generated using graph information from Phylotree 17.
+The graphical report includes an HTML table including the most important information from the textual result file (see below). The table can be filtered, sorted and searched by specific samples. Additionally, for each sample a phylogenetic tree is generated using the graph information from Phylotree 17.
  
 ![Result Report](img/report1.png)
 
 #### Phylogenetic Tree
-The tree starts at the root node (rCRS) and shows homoplasmic (blue) / heteroplasmic (green) positions for each transition until the final haplogroup (as assigned by Haplogrep) has been reached.
+The tree starts at the root node (rCRS) and shows homoplasmic (blue) / heteroplasmic (green) positions for each transition until the final haplogroup (as assigned by Haplogrep) has been reached. The two branches represent the final haplogroups of the major and minor profile. 
 
 ![Phylogenetic Tree](img/report_tree.png)
 
 
 ### Textual Report File
 
-Additonally, a text file including all results is created as well. The following columns are included:
+A text file including all rquired information results is created. The following information is included:
 
 #### Sample
 
-This columns includes the sample identifier. 
+This column includes the sample identifier. 
 
 #### Contamination Status
 
-Haplocheck works by splitting each input sample into two profiles, the so called "major" and "minor" component. Homoplasmies are always added to both profiles, heteroplasmies are split and added to the correct profile. This column can either be "YES" or "NO". 
+Haplocheck works by splitting each input sample into two profiles, the so called "major" and "minor" component. Homoplasmies are always added to both profiles, heteroplasmies are split and added to the correct profile. Depending on several internal paramters (e.g. distance between haplogroups, amount of heteroplasmies), haplocheck assigns a contamination status to each sample. This column can either be "YES" or "NO". 
 
 #### Overall Homoplasmies
-Amount of detected homoplasmies in the sample.
+Amount of included homoplasmies in the sample.
 
 #### Overall Heteroplasmies
-Amount of detected heteroplasmies in the sample.
+Amount of included heteroplasmies in the sample.
 
 #### Sample Coverage
 
-Sample coverage
+The columns defines the mean coverage for the sample. 
 
 #### Major Haplogroup
 
-Input profile is classified by using Haplogrep. The input profile includes all homoplasmies and the major component of each heteroplasmy
+The major haplogroup is calculated by using Haplogrep using a input profile. The input profile includes all homoplasmies and the **major** component of each heteroplasmy. 
 
 #### Major Haplogroup Quality
 
-This columns includes the haplogroup quality (provided by Haplogrep). See [here](http://haplogrep.uibk.ac.at/blog/explaining-the-formula/) for details.
+This columns includes the haplogroup quality (provided by Haplogrep). See [here](http://haplogrep.uibk.ac.at/blog/explaining-the-formula/) for details how this is calculated.
 
 #### Minor Haplogroup
 
-Input profile is classified by using Haplogrep. The input profile includes all homoplasmies and the major component of each heteroplasmy
+The minor haplogroup is calculated by using Haplogrep using a input profile. The input profile includes all homoplasmies and the **minor** component of each heteroplasmy. 
 
 #### Minor Haplogroup Quality
 
-This columns includes the haplogroup quality score (provided by Haplogrep). See [here](http://haplogrep.uibk.ac.at/blog/explaining-the-formula/) for details.
+This columns includes the haplogroup quality score (provided by Haplogrep). See [here](http://haplogrep.uibk.ac.at/blog/explaining-the-formula/) for details how this is calculated.
 
 #### Amount Major Homoplasmies
 
-Amount of homoplasmies used for the major haplgroup. Please keep in mind that Haplogrep assigned the best haplogroup hit and traverses through the graph. 
+Amount of homoplasmies used for the **major** haplgroup. Please keep in mind that Haplogrep assigns the best haplogroup hit by traversing through the graph. Therefore not all homoplasmies are required for the best hit. 
 
 #### Amount Minor Homoplasmies
 
-Amount of homoplasmies used for the minor haplgroup. 
+Amount of homoplasmies used for the **minor** haplgroup. 
 
 #### Amount Major Heteroplasmies
 
-Amount of heteroplasmies used for the major haplgroup. lease keep in mind that Haplogrep assigned the best haplogroup hit and traverses through the graph. 
+Amount of heteroplasmies used for the **major** haplgroup. 
 
 #### Amount Minor Heteroplasmies
 
-Amount of heteroplasmies used for the minor haplgroup. 
+Amount of heteroplasmies used for the **minor** haplgroup. 
 
 #### Major Heteroplasmy Level
 
-The major heteroplasmy level is calculated by averaging the level of the major component of each heteroplasmy. Only heteroplasmies from the common ancestor of the major and minor profile are used. Figure 1 shows the phylogenetic graph of sample HG00245. H is the common ancestor for both components, therefore only heteroplasmies 6776C (0.985), 10754C (0.981), 3992T (0.985), 4418C (0.98) and 8950A (0.989) are used for the level calculation. By averaging all levels, a final major level of 0.984 is calculated. 
+The major heteroplasmy level is calculated by averaging the level of each heteroplasmy (major component only). For this level, only heteroplasmies from the common ancestor of the major profile are used. Figure below shows the phylogenetic graph of sample HG00245. H is the common ancestor for both components, therefore only heteroplasmies `6776C (0.985)`, `10754C (0.981), `3992T (0.985)`, `4418C (0.98)` and `8950A (0.989)` are used for the level calculation. By averaging all levels, a final major level of `0.984` is calculated. 
 
 ![Figure1](img/heteroplasmy_major.jpg)
 
 #### Minor Heteroplasmy Level
 
-The minor heteroplasmy level is calculated by averaging the level of the minor component of each heteroplasmy. For sample HG00245 only the minor compoment of 3010A (0.011) and 16356C (0.012) is used resulting in a final heteroplasmy level of 0.011. 
+The minor heteroplasmy level is calculated by averaging the level of the minor component of each heteroplasmy. For sample HG00245 only the minor compoment of `3010A (0.011)` and `16356C (0.012)` is used resulting in a final heteroplasmy level of `0.011`. 
 
 #### Distance
 
