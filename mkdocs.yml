@@ -1,4 +1,5 @@
 site_name: Mitoverse
+theme: readthedocs
 
 pages:
 - Home: index.md
