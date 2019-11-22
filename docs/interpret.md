@@ -7,12 +7,12 @@ Haplocheck reports the contamination status for each mitochondrial input sample 
 
 The graphical report includes the most important information from the textual result file (see below). The table can be filtered, sorted and searched by specific samples. Additionally, for each sample a phylogenetic tree is generated using the graph information from Phylotree 17.
  
-![Result Report](img/report1.png)
+![Result Report](img/report1.jpg)
 
 #### Phylogenetic Tree
 The tree starts at the root node (rCRS) and shows homoplasmic (blue) / heteroplasmic (green) positions for each transition until the final haplogroup (as assigned by Haplogrep) has been reached. The two branches represent the final haplogroups of the major and minor profile. 
 
-![Phylogenetic Tree](img/report_tree.png)
+![Phylogenetic Tree](img/report_tree.jpg)
 
 
 ### Textual Report File
