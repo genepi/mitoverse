@@ -1,16 +1,16 @@
 
 ## Interpret Results 
 
-Haplocheck reports the contamination status for each mitochondrial input sample and creates (a) a graphical report and (b) a textual description.
+Haplocheck reports the contamination status for each mitochondrial input sample and creates (a) a graphical report (*report.html*) and (b) a textual description (*contamination.txt*). 
 
 ### Graphical Report
 
-The graphical report includes the most important information from the textual result file (see below). The table can be filtered, sorted and searched by specific samples. Additionally, for each sample a phylogenetic tree is generated using the graph information from Phylotree 17.
+The graphical report includes the most important information from the textual result file (see Textual Report File below). The table can be filtered, sorted and searched by specific samples. Additionally, for each sample a phylogenetic tree is generated using the graph information from Phylotree 17.
  
 ![Result Report](img/report1.jpg)
 
 #### Phylogenetic Tree
-The tree starts at the root node (rCRS) and shows homoplasmic (blue) / heteroplasmic (green) positions for each transition until the final haplogroup (as assigned by Haplogrep) has been reached. The two branches represent the final haplogroups of the major and minor profile. 
+The tree starts at the root node (rCRS) and shows homoplasmic (blue) / heteroplasmic (green) positions for each transition until the final haplogroup (as assigned by Haplogrep) has been reached. The two branches represent the final haplogroups of the major and minor profile. In our case the two profiles are **H1b** and **H3g1b**.
 
 ![Phylogenetic Tree](img/report_tree.jpg)
 
@@ -78,7 +78,7 @@ The minor heteroplasmy level is calculated by averaging the level of the minor c
 
 #### Distance
 
-This column defines the distance between the haplogroups of the major and minor profile using the graph structure of Phylotree 17. In the sample above, the distance would be `8` (Amount of nodes between H1b and H3g1b). 
+This column defines the distance between the haplogroups of the major and minor profile using the graph structure of Phylotree 17. In the sample above, the distance would be `8` (Amount of nodes between *H1b* and *H3g1b*). 
 
 #### Clusters 
 
