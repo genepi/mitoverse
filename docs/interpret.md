@@ -27,10 +27,10 @@ This column includes the sample identifier. (*before v1.0.7: SampleID*)
 Haplocheck works by splitting each input sample into two profiles, the so called **major** and **minor** component. Homoplasmies are always added to both profiles, heteroplasmies are split and added to the correct profile. Depending on several internal parameters (e.g. distance between haplogroups, amount of heteroplasmies), haplocheck assigns a contamination status to each sample. This column can either be **YES** or **NO**. (*before v1.0.7: Contamination*)
 
 #### Overall Homoplasmies
-Total count of included homoplasmies in the sample. (*before v1.0.7: SampleHomoplasmies*)
+Total number of included homoplasmies in the sample. (*before v1.0.7: SampleHomoplasmies*)
 
 #### Overall Heteroplasmies
-Total count of included heteroplasmies in the sample. (*before v1.0.7: SampleHeteroplasmies*)
+Total number of included heteroplasmies in the sample. (*before v1.0.7: SampleHeteroplasmies*)
 
 #### Sample Coverage
 The columns defines the mean coverage for the sample.  (*before v1.0.7: SampleMeanCoverage*)
@@ -50,21 +50,21 @@ The minor haplogroup is calculated by using Haplogrep. The input profile include
 
 This columns includes the haplogroup quality score (provided by Haplogrep). Click [here](http://haplogrep.uibk.ac.at/blog/explaining-the-formula/) for details how the metric (so called *Kulczynski* measure) is calculated. (*before v1.0.7: HgQualityMinor*)
 
-#### Amount Major Homoplasmies
+#### Number of Major Homoplasmies
 
-Amount of homoplasmies included in the **major** haplogroup. Please keep in mind that Haplogrep assigns the best haplogroup hit by traversing through the graph. Therefore not always all homoplasmies or heteroplasmies (as defined in the input profile) are required for the best hit.  (*before v1.0.7: HomoplasmiesMajor*)
+Number of homoplasmies included in the **major** haplogroup. Please keep in mind that Haplogrep assigns the best haplogroup hit by traversing through the graph. Therefore not always all homoplasmies or heteroplasmies (as defined in the input profile) are required for the best hit.  (*before v1.0.7: HomoplasmiesMajor*)
 
-#### Amount Minor Homoplasmies
+#### Number of Minor Homoplasmies
 
-Amount of homoplasmies included in the **minor** haplgroup.  (*before v1.0.7: HomoplasmiesMinor*)
+Number of homoplasmies included in the **minor** haplgroup.  (*before v1.0.7: HomoplasmiesMinor*)
 
-#### Amount Major Heteroplasmies
+#### Number of Major Heteroplasmies
 
-Amount of heteroplasmies included in the **major** haplgroup.  (*before v1.0.7: HeteroplasmiesMajor*)
+Number of heteroplasmies included in the **major** haplgroup.  (*before v1.0.7: HeteroplasmiesMajor*)
 
-#### Amount Minor Heteroplasmies
+#### Number of Minor Heteroplasmies
 
-Amount of heteroplasmies included in the **minor** haplgroup.  (*before v1.0.7: HeteroplasmiesMinor*)
+Number of heteroplasmies included in the **minor** haplgroup.  (*before v1.0.7: HeteroplasmiesMinor*)
 
 #### Major Heteroplasmy Level
 
