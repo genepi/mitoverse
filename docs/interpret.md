@@ -24,7 +24,7 @@ A text file including all required information is created by haplocheck. The fol
 This column includes the sample identifier. (*before v1.0.7: SampleID*)
 
 #### Contamination Status
-Haplocheck works by splitting each input sample into two profiles, the so called **major** and **minor** component. Homoplasmies are always added to both profiles, heteroplasmies are split and added to the correct profile. Depending on several internal parameters (e.g. distance between haplogroups, amount of heteroplasmies), haplocheck assigns a contamination status to each sample. This column can either be **YES** or **NO**. (*before v1.0.7: Contamination*)
+Haplocheck works by splitting each input sample into two profiles, the so called **major** and **minor** component. Homoplasmies are always added to both profiles, heteroplasmies are split and added to the correct profile. Depending on several internal parameters (e.g. distance between haplogroups, number of heteroplasmies), haplocheck assigns a contamination status to each sample. This column can either be **YES** or **NO**. (*before v1.0.7: Contamination*)
 
 #### Overall Homoplasmies
 Total number of included homoplasmies in the sample. (*before v1.0.7: SampleHomoplasmies*)
