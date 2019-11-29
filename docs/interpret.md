@@ -1,7 +1,7 @@
 
 ## Interpret Results
 
-Haplocheck reports the contamination status for each mitochondrial input sample and creates (a) a graphical report (*report.html*) and (b) a textual description (*contamination.txt*).
+Haplocheck reports the contamination status for each mitochondrial input sample and creates (a) a graphical report ([Example Report](sample/report.html)) and (b) a textual description ([Example Contamination File](sample/contamination.txt)).
 
 ### Graphical Report
 
