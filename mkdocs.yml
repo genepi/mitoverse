@@ -5,7 +5,7 @@ pages:
 - Home: index.md
 - Getting Started: getting-started.md
 - User Guide:
-    - Contamination Method: method.md 
+    - Contamination Method: method.md
     - Interpret Results: interpret.md
 - FAQ: faq.md
 - About: contact.md
@@ -22,4 +22,3 @@ extra:
 
 markdown_extensions:
   - admonition
-
