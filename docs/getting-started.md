@@ -10,8 +10,8 @@ To calculate the contamination levels for each sample, two options are available
         cd haplocheck
         curl -s install.cloudgene.io | bash
         wget https://github.com/genepi/haplocheck/raw/master/test-data/contamination/1000G/all/1000g-nobaq.vcf.gz
-        ./cloudgene install https://github.com/genepi/haplocheck/releases/download/v1.0.8/haplocheck.zip
-        ./cloudgene run haplocheck@1.0.8 --files 1000g-nobaq.vcf.gz --output results
+        ./cloudgene install https://github.com/genepi/haplocheck/releases/download/v1.0.9/haplocheck.zip
+        ./cloudgene run haplocheck@1.0.9 --files 1000g-nobaq.vcf.gz --output results
         firefox results/report/report.html
         
 #### Run Haplocheck as a web service
