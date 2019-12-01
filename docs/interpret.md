@@ -50,19 +50,19 @@ The minor haplogroup is calculated by using Haplogrep. The input profile include
 
 This columns includes the haplogroup quality score (provided by Haplogrep). Click [here](http://haplogrep.uibk.ac.at/blog/explaining-the-formula/) for details how the metric (so called *Kulczynski* measure) is calculated. (*before v1.0.7: HgQualityMinor*)
 
-#### Number of Major Homoplasmies
+#### Major Homoplasmies Count
 
 Number of homoplasmies included in the **major** haplogroup. Please keep in mind that Haplogrep assigns the best haplogroup hit by traversing through the graph. Therefore not always all homoplasmies or heteroplasmies (as defined in the input profile) are required for the best hit.  (*before v1.0.7: HomoplasmiesMajor*)
 
-#### Number of Minor Homoplasmies
+#### Minor Homoplasmies Count
 
 Number of homoplasmies included in the **minor** haplgroup.  (*before v1.0.7: HomoplasmiesMinor*)
 
-#### Number of Major Heteroplasmies
+#### Major Heteroplasmies Count
 
 Number of heteroplasmies included in the **major** haplgroup.  (*before v1.0.7: HeteroplasmiesMajor*)
 
-#### Number of Minor Heteroplasmies
+#### Minor Heteroplasmies Count
 
 Number of heteroplasmies included in the **minor** haplgroup.  (*before v1.0.7: HeteroplasmiesMinor*)
 
