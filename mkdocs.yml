@@ -1,7 +1,9 @@
 site_name: Mitoverse - mtDNA analysis platform
-theme: flatly
+theme:
+  name: null
+  custom_dir: 'cinder'
 
-pages:
+nav:
   - Home: index.md
   - About: contact.md
 repo_name: genepi/mitoverse
