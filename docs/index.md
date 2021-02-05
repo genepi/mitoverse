@@ -1,6 +1,6 @@
 # Welcome to Mitoverse!
 
-Mitoverse provides several tools for mtDNA data analysis. Currently Haplocheck and mtDNA-Server is available.
+Mitoverse provides several tools for mtDNA data analysis. Currently the tools haplocheck and mtDNA-Server are available. To run the tool click [here](https://mitoverse.i-med.ac.at).
 
 ## Haplocheck 
 
@@ -11,6 +11,6 @@ You can upload alignment files (BAM,CRAM) or variant files (vcf format) and rece
 
 We provide haplocheck as a [standalone pipeline](https://github.com/genepi/haplocheck#run-haplocheck-locally) and as a [cloud web service](https://mitoverse.i-med.ac.at).
 
-## mtDNA-Server 2 (Beta)
+## mtDNA-Server 2 
 
 mtDNA-Server provides a free service for the analysis of human mitochondrial DNA data, currently focusing on reliable identification of homoplasmic and heteroplasmic sites (>= 1%).

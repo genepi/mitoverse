@@ -1,18 +1,16 @@
-site_name: Mitoverse - mtDNA analysis platform
+site_name: Mitoverse
+copyright: "Cinder is licensed under the <a href='https://github.com/chrissimpkins/cinder/blob/master/LICENSE.md'>MIT license</a>"
+
 theme:
   name: null
-  custom_dir: 'cinder'
+  custom_dir: cinder
+  colorscheme: github
+  highlightjs: true
 
 nav:
   - Home: index.md
-  - About: contact.md
-repo_name: genepi/mitoverse
-repo_url: https://github.com/genepi/mitoverse
-edit_uri: edit/master/docs
-
-extra:
-  social:
-    - type: github-alt
-
+  - Contact: contact.md
 markdown_extensions:
   - admonition
+  - toc:
+      permalink: true
