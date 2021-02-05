@@ -2,17 +2,8 @@ site_name: Mitoverse - mtDNA analysis platform
 theme: readthedocs
 
 pages:
-    - Home: index.md
-    - 'Haplocheck':
-        - Getting Started: haplocheck/getting-started.md
-        - Contamination Method: haplocheck/method.md
-        - Interpret Results: haplocheck/interpret.md
-        - FAQ: haplocheck/faq.md
-        - Cite us: haplocheck/cite.md
-    - About: contact.md
-    - 'mtDNA Server 2 (Beta)':
-        - Getting Started: mtdna-server/getting-started.md
-        - Cite us: haplocheck/cite.md
+  - Home: index.md
+  - About: contact.md
 repo_name: genepi/mitoverse
 repo_url: https://github.com/genepi/mitoverse
 edit_uri: edit/master/docs
