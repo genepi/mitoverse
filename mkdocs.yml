@@ -1,5 +1,5 @@
 site_name: Mitoverse - mtDNA analysis platform
-theme: cinder
+theme: flatly
 
 pages:
   - Home: index.md
