@@ -9,9 +9,9 @@ theme:
 
 nav:
   - Home: index.md
+  - Haplocheck Tool: haplocheck/haplocheck.md
+  - Mutserve Tool: mutserve/mutserve.md
   - Contact: contact.md
-  - Haplocheck: haplocheck/haplocheck.md
-  - Mutserve: mutserve/mutserve.md
 markdown_extensions:
   - admonition
   - toc:
