@@ -1,7 +1,6 @@
+# Mutserve
 
-## Getting Started
-
-mtDNA-Server provides a free service for the analysis of human mitochondrial DNA data, currently focusing on reliable identification of heteroplasmy (>= 1%) and contamination. We also provide post-processing guidelines that should be applied after each automated analysis. A local version is available here. Follow us on Twitter for latest updates.
+Mutserve (also known as mtDNA-Server) provides a free service for the analysis of human mitochondrial DNA data, currently focusing on reliable identification of heteroplasmy (>= 1%) and contamination. We also provide post-processing guidelines that should be applied after each automated analysis. A local version is available here. Follow us on Twitter for latest updates.
 
 To calculate the contamination levels for each sample, two options are available. Here, the 1000G Phase 3 file (n=2,504) is checked for contamination. 
 

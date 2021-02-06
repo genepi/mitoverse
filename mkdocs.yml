@@ -11,7 +11,7 @@ nav:
   - Home: index.md
   - Contact: contact.md
   - Haplocheck: haplocheck/haplocheck.md
-  - mtDNA-Server: mtdna-server/mtdna-server.md
+  - Mutserve: mutserve/mutserve.md
 markdown_extensions:
   - admonition
   - toc:
