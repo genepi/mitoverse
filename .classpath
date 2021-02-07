@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry excluding="docs/mutserve/|docs/haplocheck/|docs/|cinder/" kind="src" path=""/>
+	<classpathentry kind="output" path="bin"/>
+</classpath>
