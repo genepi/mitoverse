@@ -4,6 +4,9 @@
 Haplocheck detects contamination patterns in mtDNA AND WGS sequencing studies by analyzing the mitochondrial DNA. 
 Haplpcheck also works as a proxy tool for nDNA studies and provides users a graphical report to investigate the contamination further.  
 
+## Availability
+The source code is available [here](https://github.com/genepi/haplocheck).
+
 ## Run Haplocheck locally
 
 ### VCF Input 
