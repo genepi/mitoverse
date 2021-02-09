@@ -9,3 +9,7 @@ Currently the following tools are available:
 * [Mutserve](mutserve/mutserve.md) for local mtDNA variant detection (used by mtDNA-Server).
 
 To run the tools you can either use our [cloud web service](https://mitoverse.i-med.ac.at) or download it from Github.
+
+## Haplogroup Classification
+For mtDNA haplogroup classification, haplogrep has been integrated. Haplogrep is available as a [stand-alone tool](https://github.com/seppinho/haplogrep-core) and as a [cloud web service](https://haplogrep.i-med.ac.at/).
+
