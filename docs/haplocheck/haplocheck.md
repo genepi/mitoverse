@@ -106,19 +106,19 @@ A text file including all required information is created by haplocheck. The fol
 
 #### Sample
 
-This column includes the sample identifier. (*before v1.0.7: SampleID*)
+This column includes the sample identifier. 
 
 #### Contamination Status
 Haplocheck works by splitting each input sample into two profiles, the so called **major** and **minor** component. Homoplasmies are always added to both profiles, heteroplasmies are split and added to the correct profile. Depending on several internal parameters (e.g. distance between haplogroups, number of heteroplasmies), haplocheck assigns a contamination status to each sample. This column can either be **YES** or **NO**. (*before v1.0.7: Contamination*)
 
 #### Overall Homoplasmies
-Total number of included homoplasmies in the sample. (*before v1.0.7: SampleHomoplasmies*)
+Total number of included homoplasmies in the sample. 
 
 #### Overall Heteroplasmies
-Total number of included heteroplasmies in the sample. (*before v1.0.7: SampleHeteroplasmies*)
+Total number of included heteroplasmies in the sample. 
 
 #### Sample Coverage
-The columns defines the mean coverage for the sample.  (*before v1.0.7: SampleMeanCoverage*)
+The columns defines the mean coverage for the sample.  
 
 #### Major Haplogroup
 The major haplogroup is calculated by using [Haplogrep](http://haplogrep.uibk.ac.at/). The input profile includes all homoplasmies and the **major** component of each heteroplasmy.  (*before v1.0.7: HgMajor*)
@@ -141,15 +141,15 @@ Number of homoplasmies included in the **major** haplogroup. Please keep in mind
 
 #### Minor Homoplasmies Count
 
-Number of homoplasmies included in the **minor** haplgroup.  (*before v1.0.7: HomoplasmiesMinor*)
+Number of homoplasmies included in the **minor** haplgroup.  
 
 #### Major Heteroplasmies Count
 
-Number of heteroplasmies included in the **major** haplgroup.  (*before v1.0.7: HeteroplasmiesMajor*)
+Number of heteroplasmies included in the **major** haplgroup. 
 
 #### Minor Heteroplasmies Count
 
-Number of heteroplasmies included in the **minor** haplgroup.  (*before v1.0.7: HeteroplasmiesMinor*)
+Number of heteroplasmies included in the **minor** haplgroup. 
 
 #### Major Heteroplasmy Level
 
