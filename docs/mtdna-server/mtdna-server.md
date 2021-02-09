@@ -10,8 +10,8 @@ mtDNA-Server provides a free service for the analysis of human mitochondrial DNA
 The previous version of mutserve has been integrated into [mtDNA-Server v1](https://mtdna-server.uibk.ac.at).
 
 The new version running on mitoverse includes the following changes: 
-* mutserve always reports the non-reference level as the heteroplasmy level, while mtDNA-Server reports the minor component.
-* mutserve includes a Bayesian model for homoplasmy detection. It uses the 1000G Phase 3 data as a prior and calculates the most likely posterior probability for each genotype. mtDNA-Server only outputs homoplasmic variants with a coverage > 30.
+- mutserve always reports the non-reference level as the heteroplasmy level, while mtDNA-Server reports the minor component.
+- mutserve includes a Bayesian model for homoplasmy detection. It uses the 1000G Phase 3 data as a prior and calculates the most likely posterior probability for each genotype. mtDNA-Server only outputs homoplasmic variants with a coverage > 30.
 
 ## How to cite
 
