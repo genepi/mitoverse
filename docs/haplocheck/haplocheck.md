@@ -84,7 +84,7 @@ The tree starts at the root node (rCRS) and shows homoplasmic (blue) / heteropla
 
 ### Textual Report File
 
-Haplocheck provides two text files (``contamination.txt`` and ``contamination.raw.txt)`` including all required information is created by haplocheck. 
+Haplocheck provides two text files (``contamination.txt`` and ``contamination.raw.txt``) including all required information is created by haplocheck. 
 The following columns are included in the tab-delimited file (The header corresponds to the column name)
 
 #### Sample
@@ -102,7 +102,10 @@ The detected contamination level for the sample.
 #### Sample Coverage
 The columns defines the mean coverage for the sample.  
 
-The following columns are available in ``contamination.raw.txt``.
+## Textual Report File Raw
+
+The following columns are additionally available in ``contamination.raw.txt``:
+
 #### Overall Homoplasmies
 Total number of included homoplasmies in the sample. 
 
