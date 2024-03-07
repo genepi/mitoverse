@@ -14,14 +14,38 @@ First, users upload BAM files and an Input Validation step is executed. For all 
 ### Registration
 The sign-up process on mitoverse is straight-forward. After accessing the landing page, click on "Sign up". Mitoverse allows to register **with or without an email**. In case no email is specified, mitoverse does not send a job status email.
 
-![Overall Architecture](images/signup.png)
+![Sign up](images/signup.png)
 
 ### Job Submission
-After sign-up is completed, user are able to submit new jobs. Users can submit BAM files and specify numerous parameters (e.g. variant caller, quality values, detection limit). 
+After sign-up is completed, user are able to submit new jobs. Users can submit BAM files and specify numerous parameters:
+
+#### Input Files
+The "Input Files" field enables you to select one or multiple mtDNA aligned reads in BAM Format. These files contain the genetic information necessary for the analysis performed by the mtDNA-Server 2.
+
+#### Mode
+In the "Mode" field, you can select the mode for analysis. Options include fusion, mutect2, and mutserve. Choosing the appropriate mode ensures that the analysis is tailored to your specific requirements.
+
+#### Detection Limit
+The "Detection Limit" field allows you to select the detection limit for the analysis. This parameter determines the sensitivity of the analysis to detect mutations or variations in the input data.
+
+#### Apply Coverage Estimate
+With the "Apply Coverage Estimate" field, you can choose whether to apply coverage estimation. This option helps in assessing the depth and uniformity of coverage across the input data, aiding in the accuracy of the analysis results.
+
+#### Coverage Subsampling
+Specify the desired mean coverage by entering the number of coverage you want to use. mtDNA-Server 2 automatically subsamples the uploaded reads to achieve this mean coverage. Enter "0" to deactivate coverage subsampling.
+
+#### Minimal Base Quality
+In the "Minimal Base Quality" field, specify the minimal base quality required for analysis. This parameter ensures that only high-quality bases are considered during the analysis process, improving the reliability of the results.
+
+#### Minimal Map Quality
+The "Minimal Map Quality" field allows you to specify the minimal map quality required for analysis. This parameter helps filter out reads with poor mapping quality, ensuring that only accurately mapped reads contribute to the analysis.
+        |
 
 ![Submit a job](images/submit.png)
 
-### Job Run
+
+
+### Job Monitoring
 Mitoverse returns constant feedback to the users about the current job status (waiting, running, finished) and also return details about each job step. 
 
 ![Submit a job](images/run.png)
@@ -32,86 +56,49 @@ All results are available in the Results tab. This currently includes a QC-repor
 
 ![Results](images/results.png)
 
-
-### Interactive Report
+#### Report
 After the job has been finished, users can download the interactive report to explore the data in detail which can also be easily shared with collaborators without a login.
 
 ![Results](images/report.png)
 
 
-## Variant Caller Details 
-mtDNA-Server supports two variant caller, mutserve and Mutect2. 
+#### Variants
+The "Variants" section includes files related to variant analysis.
 
-### mutserve
-Mutserve requires sorted and indexed CRAM/BAM files as an input.
+the file **variants.annotated.txt** contains detailed information about the detected variants, including annotations. It is a tab delimted file and has the following columns:
 
-```
-curl -sL mutserve.vercel.app | bash
-./mutserve
-```
-
-#### Available Tools
-Currently two tools are available. 
-
-* [call](#mutserve-call) calls homoplasmic and heteroplasmic positions. 
-* [annotate](#mutserve-annotate) annotates the mutserve variant file (generated with `mutserve call`). 
-
-#### <a name="mutserve-call">Mutserve Call</a>
-
-```
-wget https://github.com/seppinho/mutserve/raw/master/test-data/mtdna/bam/input/HG00096.mapped.ILLUMINA.bwa.GBR.low_coverage.20101123.bam
-curl -sL mutserve.vercel.app | bash
-./mutserve call --reference rCRS.fasta --output HG00096.vcf.gz --threads 4 *.bam 
-```
-
-Please use [this reference file](https://raw.githubusercontent.com/seppinho/mutserve/master/files/rCRS.fasta) when using BAQ (disabled by default since v2.0.0).
-
-
-
-#### <a name="mutserve-annotate">Mutserve Annotate</a>
-
-Mutserve allows to annotate the variant file (.txt) with a predefined [annotation file](https://raw.githubusercontent.com/seppinho/mutserve/master/files/rCRS_annotation_2020-08-20.txt) 
-
-```
-./mutserve annotate --input variantfile.txt --annotation rCRS_annotation_2020-08-20.txt --output AnnotatedVariants.txt
-```
+| Column                 | Description                                                                                     |
+|------------------------|-------------------------------------------------------------------------------------------------|
+| Mutation               | Defines variant with POS and ALT allele                                                        |
+| POS                    | Position of the variant according to the rCRS, see [rCRS_annotated](https://phylotree.org/resources/rCRS_annotated.htm) |
+| REF                    | Reference allele of the rCRS, see also [rCRS_annotated](https://phylotree.org/resources/rCRS_annotated.htm) |
+| ALT                    | Alternative allele observed on the current position                                              |
+| Substitution           | Type of Substitution: Transition (A>G, G>A, T>C, C>T) or transversion (other)                   |
+| Maplocus               | 40 different loci, including 2 MT-DLOOP(1,2), 2 MT-RNR1(2), 13 genes MT-ATP6 -> MT-ND6, 22 tRNA and noncoding (empty) |
+| Category               | 5 different categories: tRNA, rRNA, Coding, Control Region and “-” (noncoding)                 |
+| Phylotree17_haplogroups | How many haplogroups in phylotree 17 have a variant                                             |
+| Phylotree17_clades     | How many different occurrences (fluctuation rate) in different clades can be observed            |
+| HaploGrep2_weight      | Weight based on the log-transformed value on the Phylotree17_clades. Value between 1 (highest value) and 10 (only occurring in 1 clade) |
+| RSRS_SNP               | Is this SNP a RSRS defining SNP, see [RSRS_vs_rCRS](https://phylotree.org/resources/RSRS_vs_rCRS.htm) 1=yes, 0=no |
+| KGP3_SNP               | Was this SNP observed in the 1000 Genomes Project Phase 3 (low-coverage) data? 1=yes, 0=no     |
+| AAC                    | Amino Acid Change, denoted with the short Amino Acid Symbol, position on protein and the new amino acid change, e.g. M1L |
+| CodonPosition          | Position of the codon defining the mRNA sequence, values: 1,2,3 or NA                           |
+| AminoAcid              | The amino acid encoded by the reference based codon, e.g. M for Methionine                      |
+| NewAminoAcid           | The amino acid encoded by the alternative codon, e.g. L for Leucine                             |
+| AminoAcid_pos_protein  | Amino acids position on the produced protein                                                   |
+| MutPred_Score          | Pathogenicity Score based on MutPred – see [MutPred](https://doi.org/10.1093/bioinformatics/btp528) – values between 0 (benign) and 1 with values > 0.5 potentially deleterious |
+| mtDNA_Selection_Score  | Pathogenicity Score as presented in Pereira et al, [Pereira et al](https://doi.org/10.1016/j.ajhg.2011.03.006), log-transformed MutPred score – values between 0 and ~ 3 - values > 0.5 potentially deleterious |
 
 
-#### Parameters
+#### Auxiliary Files
+The "Auxiliary Files" section includes additional files generated during the analysis.
 
-| Parameter        | Default Value / Comment          | Command Line Option | 
-| ------------- |:-------------:| :-------------:| 
-| Input Files     | sorted and indexed BAM/CRAM files | |
-| Output Name   | output file; supported: \*.txt, \*.vcf, \*vcf.gz | `--output` |
-| Reference  | reference file | `--reference` |
-| Threads     | 1 | `--threads`|
-| Minimum Heteroplasmy Level     | 0.01 | `--level`|
-| Define specific mtDNA contig in whole-genome file     | null | `--contig-name`|
-| Output Fasta     | false | `--writeFasta`|
-| Output Raw File     | false | `--writeRaw`|
-| MappingQuality     | 20 | `--mapQ`|
-| BaseQuality     | 20 | `--baseQ`|
-| AlignmentQuality     | 30 | `--alignQ`|
-| Enable Base Alignment Quality (BAQ)     | false | `--baq`|
-| Disale 1000 Genomes Frequence File     | false | `--noFreq`|
-| Call deletions (beta)     | false | `--deletions`|
-| Call insertions (beta)     | false | `--insertions`|
-| Disable ANSI output     |  | `--no-ansi`|
-| Show version     |  | `--version`|
-| Show help     |  | `--help`|
-
-#### Output Formats
-
-##### Tab delimited File
-By default (`--output filename` does not end with .vcf or .vcf.gz) we export a TAB-delimited file including *ID, Position, Reference, Variant & VariantLevel*. Please note that the *VariantLevel* always reports the non-reference variant level. The output file also includes the **most** and **second most base** at a specific position (MajorBase + MajorLevel, MinorBase+MinorLevel). The reported variant can be the major or the minor component. The last column includes the type of the variant (1: Homoplasmy, 2: Heteroplasmy or Low-Level Variant, 3: Low-Level Deletion, 4: Deletion, 5: Insertion). See [here](https://raw.githubusercontent.com/seppinho/mutation-server/master/test-data/results/variantsLocal1000G) for an example. 
-
-#### VCF
-If you want a **VCF** file as an output, please specify `--output filename.vcf.gz`. Heteroplasmies are coded as 1/0 genotypes, the heteroplasmy level is included in the FORMAT using the **AF** attribute (allele frequency) of the first non-reference allele. Please note that indels are currently not included in the VCF.  This VCF file can be used as an input for https://github.com/seppinho/haplogrep-cmd.
-
-#### BAM Preperation
-Mutserve is currently not focused on indel calling. 
-Best Practice Pipelines include steps for BAM files preperation like local realignment around indels (*GenomeAnalysisTK.jar -T RealignerTargetCreator*, *java -jar GenomeAnalysisTK.jar -T IndelRealigner*) or BQSR (*GenomeAnalysisTK.jar -T BaseRecalibrator*).
-Please also have a look at the [Mutect2 Pipeline](https://gnomad.broadinstitute.org/blog/2020-11-gnomad-v3-1-mitochondrial-dna-variants/).
+- **excluded_samples.txt**: This file lists any samples that were excluded from the analysis, along with the reason for their exclusion.
+- **haplocheck.html**: The HTML report from Haplocheck provides information about contamination.
+- **haplocheck.txt**: The text file containing contamination information and quality assessment results from Haplocheck.
+- **haplogroups.txt**: This file contains the assigned mitochondrial haplogroups for each sample analyzed.
+- **sample_mappings.txt**: The sample mappings file provides information about the mapping between sample IDs and their corresponding filenames.
+- **sample_statistics.txt**: This file contains statistical summaries and metrics for each sample analyzed in the study.
 
 
 ## Citation
