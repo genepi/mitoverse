@@ -56,10 +56,15 @@ All results are available in the Results tab. This currently includes a QC-repor
 
 ![Results](images/results.png)
 
+
 #### Report
 After the job has been finished, users can download the interactive report to explore the data in detail which can also be easily shared with collaborators without a login.
 
-![Results](images/report.png)
+![Report](images/report.png)
+
+By clicking on a sample name, a new tab opens with more details of the sample and all detected variants and heteroplasmies:
+
+![Report-Details](images/report-details.png)
 
 
 #### Variants
