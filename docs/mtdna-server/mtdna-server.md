@@ -97,9 +97,9 @@ the file **variants.annotated.txt** contains detailed information about the dete
 | OXPHOS_complex		 | Indicates whether a variant is on a gene encoding one of the  OXPHOS complexes I, III, IV or V  |
 | NuMTs_dayama	         | SNP observed in the 1000 Genomes Project Phase 1 data occuring as part of a NUMT  (Dayama et al 10.1093/nar/gku1038) ? Numbers indicating how many fragments with SNP were found  |
 | Helix_count_hom	     | Homoplasmic variant count in HelixMTdb https://www.helix.com/mitochondrial-variant-database  |
-| Helix_count_het	     | Heteroplasmic variant count in HelixMTdb https://www.helix.com/mitochondrial-variant-database  |
+| Helix_count_het	     | Heteroplasmic variant count in HelixMTdb (see previous entry)  |
 | Helix_vaf_hom	         | Variants Allele Frequency of homoplasmic variants in HelixMTdb = count / (n=~195,000)  |
-| Helix_vaf_het	         | Variants Allele Frequency of heterioplasmic variants in HelixMTdb = count / (n=~195,000)  |
+| Helix_vaf_het	         | Variants Allele Frequency of heteroplasmic variants in HelixMTdb = count / (n=~195,000)  |
 | Helix_haplogroups	     | Haplogroups (major clades) found with the variant in HelixMTdb e.g. H:7 indicates that haplogroup H was found to harbour the variant in 7 samples  |
 | rCRS_Surr_seq	         | Surrounding nucleotides based on the POS of the current variant on the reference sequence rCRS e.g. (CCCTC[T/A]AAATC)  |
 | LowComplexityRegion	 | Checks if rCRS_Surr_seq includes homopolymeric stretches of length 4 or longer (0 = no, 1=yes)  |
