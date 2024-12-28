@@ -1,15 +1,18 @@
 # mtDNA-Server 2
 
-mtDNA-Server 2 provides a free service for the analysis of human mitochondrial DNA data, currently focusing on reliable identification of heteroplasmy (>= 1%) and contamination. We also provide post-processing guidelines that should be applied after each automated analysis.
+mtDNA-Server 2 offers a free service for analyzing human mitochondrial DNA data, with a primary focus on reliable heteroplasmy detection (≥ 2%) and contamination assessment. 
 
-## Availability
-[Run a job](https://mitoverse.i-med.ac.at) using our cloud web service or checkout the source code on [GitHub](https://github.com/genepi/mtdna-server-2).
+**mtDNA-Server 2 is implemented as a Nextflow DSL 2 pipeline, available both as a web service and for download. Both options are described below.** 
 
-## Workflow 
-First, users upload BAM files and an Input Validation step is executed. For all samples, which are passing Input Validation, a FastQC report is created, summarized with MultiQC. Next, one of the available variant callers (mutserve or Mutect2) can be selected. Detected variants are annotated and a contamination check as well as a haplogroup assignment process are executed (using the previously published haplocheck and haplogrep3 tools from our institute). All created files are finally summarized in an interactive HTML report. 
+## Overview
+First, users specify BAM files (via service upload or a Nextflow DSL 2 config file), and an *Input Validation* step is executed. For all samples that pass this step, the *Quality Control* step follows, which includes generating a FastQC report that is summarized with MultiQC. Next, *Variant Calling* is performed using one of the available variant callers (**mutserve** or **Mutect2**). In **fusion mode**, Indels from Mutect2 are combined with SNP calling from mutserve. The *Annotation* step provides detailed annotations for the detected variants, while the *Contamination Detection* step is performed using **haplocheck**. The *Haplogroup Classification* process is then carried out using the previously published **Haplogrep3** tool. Finally, all generated files are summarized within the *Report Tool* step in an interactive HTML report.
+
+
 
 ![Overall Architecture](images/overall.png)
 
+
+## Web Service
 
 ### Registration
 The sign-up process on mitoverse is straight-forward. After accessing the landing page, click on "Sign up". Mitoverse allows to register **with or without an email**. In case no email is specified, mitoverse does not send a job status email.
@@ -43,8 +46,6 @@ The "Minimal Map Quality" field allows you to specify the minimal map quality re
 
 ![Submit a job](images/submit.png)
 
-
-
 ### Job Monitoring
 Mitoverse returns constant feedback to the users about the current job status (waiting, running, finished) and also return details about each job step. 
 
@@ -57,7 +58,66 @@ All results are available in the Results tab. This currently includes a QC-repor
 ![Results](images/results.png)
 
 
-#### Report
+## Nextflow DSL2 Pipeline
+
+To run mtDNA-Server 2 via Nextflow on the command line, follow the steps below.
+
+1) First, install [Nextflow](https://www.nextflow.io/docs/latest/install.html#installation) (>=22.10.4) and [Docker](https://www.docker.com/).
+
+2) Next, create a new folder on your local disk and download a test BAM file into it.
+```
+mkdir mtdna-server-2
+cd mtdna-server-2
+wget https://github.com/genepi/mtdna-server-2/raw/refs/heads/main/tests/data/bam/mitohpc/sample_S.bam
+```
+
+3) Next, create a new text file, copy the content below, and save it as `mtdna-server-2.config`.
+```
+params {
+    project         = "test-job"
+    files           = "*.bam"
+    output          = "results/"
+    detection_limit = 0.03    
+    mode            = "fusion"
+}
+```
+
+4) You are now ready to execute the latest pipeline. The command below will download the source code from GitHub and the latest Docker image, then run the pipeline on the downloaded BAM file. All available BAM files will be processed in parallel.
+
+```
+nextflow run genepi/mtdna-server-2 -r v2.1.16 -c mtdna-server-2.config -profile docker
+```
+
+!!! note
+     Please note that we also provide other [profiles](https://github.com/genepi/mtdna-server-2/blob/main/nextflow.config), such as Slurm or Singularity.
+
+After a few minutes, all files will be available for download in the specified `results` folder. The main file is the `report.html`, which contains a graphical report of the analysis. The primary variant file is `variants.annotated.txt`. See [below](#output) for further details.
+
+!!! note
+    Please note that the first execution takes longer, as the image needs to be downloaded.
+
+### Parameters
+The following parameters can be set in the configuration file above: 
+
+| Parameter            | Default Value        | Comment        |
+|----------------------|--------------|----------------|
+| project              | null         | Project name (required)   |
+| files                | null         | Input BAM files (required) |
+| mode                 | fusion       | Mode of operation (mutserve,mutect2,fusion) |
+| detection_limit      | 0.02         | Detection limit for heteroplasmic sites |
+| coverage_estimation  | on           | Coverage estimation enabled |
+| subsampling          | off          | Subsampling on/off |
+| subsampling_coverage | 2000         | Subsampling coverage |
+| mapQ                 | 20           | Mapping quality threshold |
+| baseQ                | 20           | Base quality threshold |
+| alignQ               | 30           | Alignment quality threshold |
+| min_mean_coverage               | 50           | Min Mean coverage |
+| output               | null         | Specific Output folder   |
+
+
+## Output Files
+
+### Report
 After the job has been finished, users can download the interactive report to explore the data in detail which can also be easily shared with collaborators without a login.
 
 ![Report](images/report.png)
@@ -66,11 +126,9 @@ By clicking on a sample name, a new tab opens with more details of the sample an
 
 ![Report-Details](images/report-details.png)
 
+### Variants
 
-#### Variants
-The "Variants" section includes files related to variant analysis.
-
-the file **variants.annotated.txt** contains detailed information about the detected variants, including annotations. It is a tab delimted file and has the following columns:
+The file `variants.annotated.txt` contains detailed information about the detected variants, including annotations. It is a tab-delimited file with the following columns.
 
 | Column                 | Description                                                                                     |
 |------------------------|-------------------------------------------------------------------------------------------------|
@@ -107,9 +165,7 @@ the file **variants.annotated.txt** contains detailed information about the dete
 | DuplSeq_rCRS_pos	     | If motif is found as duplicate (see previous field), coordinates of the position on the rCRS are provided here  |
 
 
-
-
-#### Auxiliary Files
+### Auxiliary Files
 The "Auxiliary Files" section includes additional files generated during the analysis.
 
 - **excluded_samples.txt**: This file lists any samples that were excluded from the analysis, along with the reason for their exclusion.
@@ -118,10 +174,3 @@ The "Auxiliary Files" section includes additional files generated during the ana
 - **haplogroups.txt**: This file contains the assigned mitochondrial haplogroups for each sample analyzed.
 - **sample_mappings.txt**: The sample mappings file provides information about the mapping between sample IDs and their corresponding filenames.
 - **sample_statistics.txt**: This file contains statistical summaries and metrics for each sample analyzed in the study.
-
-
-## Citation
-
-Weissensteiner Hansi, Lukas Forer, Christian Fuchsberger, Bernd Schöpf, Anita Kloss-Brandstätter, Günther Specht, Florian Kronenberg, and Sebastian Schönherr.
-mtDNA-Server: Next-Generation Sequencing Data Analysis of Human Mitochondrial DNA in the Cloud. Nucleic Acids Research: gkw247. doi:10.1093/nar/gkw247. 2016
-http://nar.oxfordjournals.org/lookup/doi/10.1093/nar/gkw247.
