@@ -1,8 +1,10 @@
 # mtDNA-Server 2
 
-mtDNA-Server 2 offers a free service for analyzing human mitochondrial DNA data, with a primary focus on reliable heteroplasmy detection (≥ 2%) and contamination assessment. 
+mtDNA-Server 2 is a pipeline for the analysis of human mitochondrial DNA data, with a primary focus on reliable heteroplasmy detection (≥ 2%). It is implemented as a Nextflow DSL 2 pipeline, available both as a [web service](https://mitoverse.i-med.ac.at/) and for [download](https://github.com/genepi/mtdna-server-2). Both options are described below.
 
-**mtDNA-Server 2 is implemented as a Nextflow DSL 2 pipeline, available both as a web service and for download. Both options are described below.** 
+## Citation
+
+Weissensteiner H*, Forer L*, Kronenberg F, Schönherr S. [mtDNA-Server 2: advancing mitochondrial DNA analysis through highly parallelized data processing and interactive analytics](https://doi.org/10.1093/nar/gkae296). Nucleic Acids Res. 2024 May 6:gkae296. doi: 10.1093/nar/gkae296. Epub ahead of print. PMID: 38709886.
 
 ## Overview
 First, users specify BAM files (via service upload or a Nextflow DSL 2 config file), and an *Input Validation* step is executed. For all samples that pass this step, the *Quality Control* step follows, which includes generating a FastQC report that is summarized with MultiQC. Next, *Variant Calling* is performed using one of the available variant callers (**mutserve** or **Mutect2**). In **fusion mode**, Indels from Mutect2 are combined with SNP calling from mutserve. The *Annotation* step provides detailed annotations for the detected variants, while the *Contamination Detection* step is performed using **haplocheck**. The *Haplogroup Classification* process is then carried out using the previously published **Haplogrep3** tool. Finally, all generated files are summarized within the *Report Tool* step in an interactive HTML report.
@@ -15,7 +17,7 @@ First, users specify BAM files (via service upload or a Nextflow DSL 2 config fi
 ## Web Service
 
 ### Registration
-The sign-up process on mitoverse is straight-forward. After accessing the landing page, click on "Sign up". Mitoverse allows to register **with or without an email**. In case no email is specified, mitoverse does not send a job status email.
+The sign-up process on [mitoverse](https://mitoverse.i-med.ac.at/) is straight-forward. After accessing the landing page, click on "Sign up". Mitoverse allows to register **with or without an email**. In case no email is specified, mitoverse does not send a job status email.
 
 ![Sign up](images/signup.png)
 
@@ -60,7 +62,7 @@ All results are available in the Results tab. This currently includes a QC-repor
 
 ## Nextflow DSL2 Pipeline
 
-To run mtDNA-Server 2 via Nextflow on the command line, follow the steps below.
+To run [mtDNA-Server 2](https://github.com/genepi/mtdna-server-2/) via Nextflow on the command line, follow the steps below.
 
 1) First, install [Nextflow](https://www.nextflow.io/docs/latest/install.html#installation) (>=22.10.4) and [Docker](https://www.docker.com/).
 
